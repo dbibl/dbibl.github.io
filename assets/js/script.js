@@ -33,6 +33,7 @@ async function submitForm(e, form) {
         // document.getElementById("name").innerHTML = myObj.data.name;
         var t = JSON.parse(JSON.stringify(response));
         document.getElementById("json").textContent =t.log;
+//        document.getElementById("json").textContent =t.prediction;
     }
     else
         alert(`An error occured.`);
