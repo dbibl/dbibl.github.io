@@ -1,4 +1,4 @@
-import FetchService from './service/FetchService';
+import FetchService from './service/FetchService.js';
 
 /*-- Objects --*/
 const fetchService = new FetchService();
@@ -19,10 +19,21 @@ async function submitForm(e, form) {
     const headers = buildHeaders();
     // 2.4 Request & Response
     const response = await fetchService.performPostHttpRequest(`https://jsonplaceholder.typicode.com/posts`, headers, jsonFormData); // Uses JSON Placeholder
+    // const response = await fetchService.performPostHttpRequest(`https://vhx6uxqfq1.execute-api.us-west-1.amazonaws.com/dev/log`, headers, jsonFormData);
     console.log(response);
     // 2.5 Inform user of result
-    if(response)
-        window.location = `/success.html?FirstName=${response.FirstName}&LastName=${response.LastName}&Email=${response.Email}&id=${response.id}`;
+    if(response) {
+        // window.location = `/success.html?FirstName=${response.FirstName}&LastName=${response.LastName}&Email=${response.Email}&id=${response.id}`;
+        // window.location = `/success.html?prediction=${response.prediction}`;
+        // alert(JSON.stringify(response))
+        // var jsonStr = JSON.stringify(response);
+        // document.body.innerHTML = jsonStr;
+        // document.getElementById("json").textContent = JSON.stringify(response.prediction, undefined, 2);
+        // var myObj = JSON.parse(response);
+        // document.getElementById("name").innerHTML = myObj.data.name;
+        var t = JSON.parse(JSON.stringify(response));
+        document.getElementById("json").textContent =t.log;
+    }
     else
         alert(`An error occured.`);
 }
@@ -30,7 +41,10 @@ async function submitForm(e, form) {
 function buildHeaders(authorization = null) {
     const headers = {
         "Content-Type": "application/json",
-        "Authorization": (authorization) ? authorization : "Bearer TOKEN_MISSING"
+        "Access-Control-Allow-Headers": 'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Requested-With',
+        "Access-Control-Allow-Origin": '*',
+        "Access-Control-Allow-Methods": 'DELETE,GET,HEAD,OPTIONS,PATCH,POST,PUT',
+        "Access-Control-Allow-Credentials": true// Required for cookies, authorization headers with HTTPS
     };
     return headers;
 }

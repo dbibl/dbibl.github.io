@@ -1,3 +1,6 @@
+<?php
+header('Access-Control-Allow-Origin: https://amazonaws.com');
+?>
 <!DOCTYPE HTML>
 <!--
 	Hyperspace by HTML5 UP
@@ -7,6 +10,7 @@
 <html>
 	<head>
 		<title>Hyperspace by HTML5 UP</title>
+		<meta http-equiv="Access-Control-Allow-Origin" content="*"/>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -22,7 +26,7 @@
 							<li><a href="#intro">Welcome</a></li>
 							<li><a href="#one">How It Works</a></li>
 							<li><a href="#two">Future Models</a></li>
-							<li><a href="#three">Get in touch</a></li>
+							<li><a href="#three">AI Text Detection</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -35,7 +39,7 @@
 					<section id="intro" class="wrapper style1 fullscreen fade-up">
 						<div class="inner">
 							<h1>Catch.ai</h1>
-							<p>Generative AI Text Detection</p>
+							<p>Detecting Generative AI in all forms of media</p>
 							<ul class="actions">
 								<li><a href="#one" class="button scrolly">Learn more</a></li>
 							</ul>
@@ -49,7 +53,7 @@
 							<div class="content">
 								<div class="inner">
 									<h2>AI Detection</h2>
-									<p>State of the art machine learning model trained to detect whether text is human-generated or AI-generated. Catch.ai's machine learning model is 99.7% accurate in determining whether text is AI-generated.</p>
+									<p>State of the art machine learning model trained to detect whether media is human-generated or AI-generated. Currently, Catch.ai's machine learning model is 99.7% accurate in determining whether text is AI-generated.</p>
 									<!-- <ul class="actions">
 										<li><a href="generic.html" class="button">Learn more</a></li>
 									</ul> -->
@@ -74,7 +78,7 @@
 							<div class="content">
 								<div class="inner">
 									<h2>Why it matters</h2>
-									<p>With the advent of exponentially improving generative AI models, we deserve to know whether we are interacting with and consuming the work of real humans or that of AI.</p>
+									<p>With the advent of exponentially improving generative AI models, we deserve to know whether we are interacting with AI. Generative models can now be used to proliferate false information or impersonate humans.</p>
 									<ul class="actions">
 										<li><a href="generic.html" class="button">Learn more</a></li>
 									</ul>
@@ -129,19 +133,47 @@
 				<!-- Three -->
 					<section id="three" class="wrapper style1 fade-up">
 						<div class="inner">
-							<h2>Get in touch</h2>
-							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
+							<h2>AI Text Detection</h2>
+							<p>Catch.ai will determine whether text is human-generated or AI-generated, along with its confidence in the answer.</p>
 
-							<form method="post" action="#">
+							<form action="" id="sampleForm">
+								<div class="field half">
+									<label for="log">Input Text</label>
+									<textarea name="log" class="input-text input-text-block w-100" id="log" rows="5"></textarea>
+									<!-- <input type="text" class="input-text input-text-block w-100" id="log" rows="5" name="log"> -->
+								</div>
+
+								<!-- <div class="fields">
+									<label for="LastName">Last Name</label>
+									<input type="text" class="input-text input-text-block w-100" id="LastName" name="LastName">
+								</div>
+								<div class="fields">
+									<label for="Email">Email</label>
+									<input type="email" class="input-text input-text-block w-100" id="Email" name="Email">
+								</div> -->
+								<br />
+								<div class="form-row mx-auto">
+									<button type="submit" class="btn-submit" id="btnSubmit">
+									Submit!
+									</button>
+								</div>
+
+								<pre id="json"></pre>
+							</form>
+
+						  <script src="assets/js/script.js" type="module"></script>
+
+
+							<!-- <form method="post" action="#">
 										<div class="fields">
-											<!-- <div class="field half">
+											div class="field half">
 												<label for="name">Name</label>
 												<input type="text" name="name" id="name" />
 											</div>
 											<div class="field half">
 												<label for="email">Email</label>
 												<input type="text" name="email" id="email" />
-											</div> -->
+											</div>
 											<div class="field">
 												<label for="message">Message</label>
 												<textarea name="message" id="message" rows="5"></textarea>
@@ -150,7 +182,7 @@
 										<ul class="actions">
 											<li><a href="" class="button submit">Send Message</a></li>
 										</ul>
-							</form>
+							</form> -->
 
 							<!-- <div class="split style1">
 								<section>
@@ -203,7 +235,7 @@
 									</ul>
 								</section>-->
 							</div>
-						</div>
+
 					</section>
 
 			</div>
@@ -212,7 +244,7 @@
 			<footer id="footer" class="wrapper style1-alt">
 				<div class="inner">
 					<ul class="menu">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						<li>&copy; Catch.ai. All rights reserved.</li>
 					</ul>
 				</div>
 			</footer>
