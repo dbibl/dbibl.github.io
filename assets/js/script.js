@@ -42,11 +42,11 @@ async function submitForm(e, form) {
 function buildHeaders(authorization = null) {
     const headers = {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Headers": 'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Requested-With',
-        "Access-Control-Allow-Origin": '*',
-        "Access-Control-Allow-Methods": 'DELETE,GET,HEAD,OPTIONS,PATCH,POST,PUT',
-        "Access-Control-Allow-Credentials": true// Required for cookies, authorization headers with HTTPS
     };
+//            "Access-Control-Allow-Origin": '*',
+//        "Access-Control-Allow-Methods": 'DELETE,GET,HEAD,OPTIONS,PATCH,POST,PUT',
+//        "Access-Control-Allow-Headers": 'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Requested-With',
+//        "Access-Control-Allow-Credentials": true// Required for cookies, authorization headers with HTTPS
     return headers;
 }
 
