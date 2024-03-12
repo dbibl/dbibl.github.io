@@ -18,8 +18,8 @@ async function submitForm(e, form) {
     // 2.3 Build Headers
     const headers = buildHeaders();
     // 2.4 Request & Response
-    const response = await fetchService.performPostHttpRequest(`https://jsonplaceholder.typicode.com/posts`, headers, jsonFormData); // Uses JSON Placeholder
-    // const response = await fetchService.performPostHttpRequest(`https://vhx6uxqfq1.execute-api.us-west-1.amazonaws.com/dev/log`, headers, jsonFormData);
+//    const response = await fetchService.performPostHttpRequest(`https://jsonplaceholder.typicode.com/posts`, headers, jsonFormData); // Uses JSON Placeholder
+     const response = await fetchService.performPostHttpRequest(`https://vhx6uxqfq1.execute-api.us-west-1.amazonaws.com/dev/log`, headers, jsonFormData);
     console.log(response);
     // 2.5 Inform user of result
     if(response) {
@@ -32,8 +32,8 @@ async function submitForm(e, form) {
         // var myObj = JSON.parse(response);
         // document.getElementById("name").innerHTML = myObj.data.name;
         var t = JSON.parse(JSON.stringify(response));
-        document.getElementById("json").textContent =t.log;
-//        document.getElementById("json").textContent =t.prediction;
+//        document.getElementById("json").textContent =t.log;
+        document.getElementById("json").textContent =t.prediction;
     }
     else
         alert(`An error occured.`);
